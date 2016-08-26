@@ -24,13 +24,17 @@ _Allow user to select pizza toppings._
 * _Example Input: Toppings: cheese, pepperoni._
 * _Example Output: No output._
 
-_When pizza selections are submitted, display results to user._
+_When pizza selections are added to cart, display results to user._
 * _Example Input: Large, cheese pizza._
 * _Example Output: "You've selected a large cheese pizza."
 
-_Calculate cost of pizza based on size of pizza and selected toppings._
+_Calculate cost of single pizza based on size of pizza and selected toppings._
 * _Example Input: Large, cheese pizza._
-* _Example Output: "Your total is: $18."_
+* _Example Output: "Subtotal: $18."_
+
+_Calculate cost of order total based on total of each pizza subtotal._
+* _Example Input: 2 X Large, cheese pizza._
+* _Example Output: "Your total is: $36."_
 
 ## Known Bugs
 

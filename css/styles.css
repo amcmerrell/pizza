@@ -41,6 +41,11 @@ p {
   padding-bottom: 20px;
 }
 
+.order-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 #order, .order-details {
   display: none;
 }
@@ -51,7 +56,7 @@ p {
   padding-bottom: 8px;
 }
 
-.order-title {
+#display-total {
   font-weight: bold;
-  text-decoration: underline;
+  font-size: 16px;
 }
