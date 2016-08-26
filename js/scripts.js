@@ -1,7 +1,14 @@
 // Business Logic
 function Order (pizzas, totalPrice) {
   this.pizzas = [];
-  this.totalPrice = totalPrice;
+  this.orderPrice = 0;
+}
+
+Order.prototype.totalPrice = function() {
+  for (var i = 0; i < this.pizzas.length; i++) {
+    this.orderPrice = this.orderPrice + this.pizzas[i].price;
+  }
+  return this.orderPrice;
 }
 
 function Pizza(size, quantity, toppings, price) {
@@ -51,8 +58,9 @@ $(document).ready(function() {
     });
     newPizza.price = newPizza.createPrice();
     newOrder.pizzas.push(newPizza);
-    $("#display-order").append("<h5 class='order-title'>" + newPizza.quantity + " X " + newPizza.size + " Pizzas</h5><p class='order-details'>" + newPizza.allToppings() +"</p><p class='order-details'>$" + newPizza.price + "</p>");
+    $("#display-order").append("<h5 class='order-title'>" + newPizza.quantity + " X " + newPizza.size + " Pizzas</h5><p class='order-details'>" + newPizza.allToppings() +"</p><p class='order-details'>Subtotal: $" + newPizza.price + "</p>");
     $(".order-details").fadeIn(1000);
+    $("#display-total").text("Total Price: $" + newOrder.totalPrice());
     resetFields();
   });
 
