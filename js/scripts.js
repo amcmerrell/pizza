@@ -24,8 +24,6 @@ Pizza.prototype.createPrice = function() {
   return this.price;
 }
 
-
-
 // UI Logic
 function resetFields() {
   $("#size").val("Small");
@@ -53,7 +51,6 @@ $(document).ready(function() {
 
   $("form").submit(function(event) {
     event.preventDefault();
-
 
   });
 });

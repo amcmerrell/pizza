@@ -12,33 +12,50 @@
   <body>
     <div class="container">
       <h1>PDX Pizza</h1>
-      <form>
-        <div class="form-group">
-          <label for="size">Select your pizza size</label>
-          <select class="form-control" id="size">
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-            <option value="Extra Large">Extra Large</option>
-          </select>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Build your pizza</h3>
+          <form>
+            <div class="form-group">
+              <label for="size">Step 1: Select your pizza size.</label>
+              <select class="form-control" id="size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Extra Large">Extra Large</option>
+              </select>
+            </div>
+            <label for="toppings">Step 2: Select your toppings.</label>
+            <div class="form-group">
+              <label class="checkbox-inline">
+                <input type="checkbox" name="toppings" value="Cheese">
+                Cheese
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="toppings" value="Pepperoni">
+                Pepperoni
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="toppings" value="Bacon">
+                Bacon
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="toppings" value="Green Peppers">
+                Green Peppers
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="toppings" value="Mushrooms">
+                Mushrooms
+              </label>
+            </div>
+            <button type="button" id="cart" class="btn btn-primary">Add to cart</button>
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label class="checkbox-inline">
-            <input type="checkbox" class="reset-check" name="toppings" value="Cheese">
-            Cheese
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" class="reset-check" name="toppings" value="Pepperoni">
-            Pepperoni
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" class="reset-check" name="toppings" value="Green Peppers">
-            Green Peppers
-          </label>
+        <div class="col-md-3 col-md-offset-3">
+          <h3>Order Details</h3>
         </div>
-        <button type="button" id="cart" class="btn btn-primary">Add to cart</button>
-        <button type="submit" class="btn btn-warning">Submit</button>
-      </form>
+      </div>
     </div>
   </body>
 </html>
