@@ -41,19 +41,25 @@ p {
   padding-bottom: 20px;
 }
 
+/* Order Details Sidebar*/
+#order {
+  display: none;
+  margin-bottom: 15px;
+}
+
 .order-title {
   font-weight: bold;
   text-decoration: underline;
 }
 
-#order, .order-details {
+.order-details {
   display: none;
 }
 
 .order-price {
   display: none;
   border-bottom: 2px white dashed;
-  padding-bottom: 8px;
+  padding-bottom: 11px;
 }
 
 #display-total {
