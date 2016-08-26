@@ -4,18 +4,18 @@ function Order (pizzas, totalPrice) {
   this.orderPrice = 0;
 }
 
-Order.prototype.totalPrice = function() {
-  for (var i = 0; i < this.pizzas.length; i++) {
-    this.orderPrice = this.orderPrice + this.pizzas[i].price;
-  }
-  return this.orderPrice;
-}
-
 function Pizza(size, quantity, toppings, price) {
   this.size = size;
   this.quantity = quantity
   this.toppings = [];
   this.price = price;
+}
+
+Order.prototype.totalPrice = function() {
+  for (var i = 0; i < this.pizzas.length; i++) {
+    this.orderPrice = this.orderPrice + this.pizzas[i].price;
+  }
+  return this.orderPrice;
 }
 
 Pizza.prototype.createPrice = function() {
@@ -63,10 +63,5 @@ $(document).ready(function() {
     $(".order-details").fadeIn(1000);
     $("#display-total").text("Total Price: $" + newOrder.totalPrice());
     resetFields();
-  });
-
-  $("form").submit(function(event) {
-    event.preventDefault();
-
   });
 });
