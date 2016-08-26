@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -13,7 +14,7 @@
     <div class="container">
       <h1>PDX Pizza</h1>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 content-bg">
           <h3>Build your pizza</h3>
           <form>
             <div class="form-group">
@@ -60,10 +61,10 @@
               </select>
             </div>
             <button type="button" id="cart" class="btn btn-primary">Add to cart</button>
-            <button type="submit" class="btn btn-warning">Submit</button>
           </form>
         </div>
-        <div class="col-md-3 col-md-offset-3">
+        <div class="col-md-3 col-md-offset-3 content-bg" id="order">
+          <form>
           <h3>Order Details</h3>
           <div id="display-order">
 
@@ -71,6 +72,7 @@
           <div id="display-total">
 
           </div>
+          <button type="button" class="btn btn-success">Place Order</button>
         </div>
       </div>
     </div>

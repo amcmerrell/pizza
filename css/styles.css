@@ -1,3 +1,18 @@
-.order-details {
+body {
+  background: url(../img/pizza-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.order-details, #order {
   display: none;
+}
+
+.content-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border-radius: 33px;
+  padding-bottom: 10px;
 }
