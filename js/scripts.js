@@ -4,22 +4,22 @@ function Order (pizzas, totalPrice) {
   this.totalPrice = totalPrice;
 }
 
-function Pizza(size, toppings, price) {
+function Pizza(size, quantity, toppings, price) {
   this.size = size;
-  this.qua
+  this.quantity = quantity
   this.toppings = [];
   this.price = price;
 }
 
 Pizza.prototype.createPrice = function() {
   if (this.size === "Small") {
-    this.price = 10+(this.toppings.length*2);
+    this.price = this.quantity*(10+(this.toppings.length*2));
   } else if (this.size === "Medium") {
-    this.price = 12+(this.toppings.length*2);
+    this.price = this.quantity*(12+(this.toppings.length*2));
   } else if (this.size === "Large") {
-    this.price = 14+(this.toppings.length*2);
+    this.price = this.quantity*(14+(this.toppings.length*2));
   } else {
-    this.price = 16+(this.toppings.length*2);
+    this.price = this.quantity*(16+(this.toppings.length*2));
   }
   return this.price;
 }
@@ -27,11 +27,12 @@ Pizza.prototype.createPrice = function() {
 // UI Logic
 function resetFields() {
   $("#size").val("Small");
-  $(".btn").mouseup(function(){
-    $(this).blur();
-  });
+  $("#quantity").val("1");
   $(".reset-check").each(function() {
     $(this).prop("checked", false)
+  });
+  $(".btn").mouseup(function(){
+    $(this).blur();
   });
 }
 
@@ -39,13 +40,14 @@ $(document).ready(function() {
   var newOrder = new Order();
   $("#cart").click(function() {
     var size = $("#size").val();
-    var newPizza = new Pizza(size)
+    var quantity = parseInt($("#quantity").val());
+    var newPizza = new Pizza(size, quantity);
     $("input:checkbox[name=toppings]:checked").each(function() {
       newPizza.toppings.push($(this).val());
     });
     newPizza.price = newPizza.createPrice();
     newOrder.pizzas.push(newPizza);
-    console.log(newOrder);
+    $("#display-order").append("<p><strong>" + newPizza.quantity + " X " + newPizza.size + " Pizzas</strong></p>");
     resetFields();
   });
 

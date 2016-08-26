@@ -48,12 +48,26 @@
                 Mushrooms
               </label>
             </div>
+            <div class="form-group">
+              <label for="size">Step 3: Choose how many pizzas you want with these selections.</label>
+              <select class="form-control" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
             <button type="button" id="cart" class="btn btn-primary">Add to cart</button>
             <button type="submit" class="btn btn-warning">Submit</button>
           </form>
         </div>
         <div class="col-md-3 col-md-offset-3">
           <h3>Order Details</h3>
+          <div id="display-order">
+
+          </div>
         </div>
       </div>
     </div>
