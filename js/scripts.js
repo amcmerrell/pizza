@@ -24,6 +24,10 @@ Pizza.prototype.createPrice = function() {
   return this.price;
 }
 
+Pizza.prototype.allToppings = function() {
+    return this.toppings.join(", ");
+}
+
 // UI Logic
 function resetFields() {
   $("#size").val("Small");
@@ -47,7 +51,8 @@ $(document).ready(function() {
     });
     newPizza.price = newPizza.createPrice();
     newOrder.pizzas.push(newPizza);
-    $("#display-order").append("<p><strong>" + newPizza.quantity + " X " + newPizza.size + " Pizzas</strong></p>");
+    $("#display-order").append("<h5 class='order-title'>" + newPizza.quantity + " X " + newPizza.size + " Pizzas</h5><p class='order-details'>" + newPizza.allToppings() +"</p><p class='order-details'>$" + newPizza.price + "</p>");
+    $(".order-details").fadeIn(1000);
     resetFields();
   });
 
