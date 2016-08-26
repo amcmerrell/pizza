@@ -1,6 +1,12 @@
 // Business Logic
+function Order (pizzas, totalPrice) {
+  this.pizzas = [];
+  this.totalPrice = totalPrice;
+}
+
 function Pizza(size, toppings, price) {
   this.size = size;
+  this.qua
   this.toppings = [];
   this.price = price;
 }
@@ -18,17 +24,36 @@ Pizza.prototype.createPrice = function() {
   return this.price;
 }
 
-// UI Logic
-$(document).ready(function() {
-  $("form").submit(function(event) {
-    event.preventDefault();
 
+
+// UI Logic
+function resetFields() {
+  $("#size").val("Small");
+  $(".btn").mouseup(function(){
+    $(this).blur();
+  });
+  $(".reset-check").each(function() {
+    $(this).prop("checked", false)
+  });
+}
+
+$(document).ready(function() {
+  var newOrder = new Order();
+  $("#cart").click(function() {
     var size = $("#size").val();
     var newPizza = new Pizza(size)
     $("input:checkbox[name=toppings]:checked").each(function() {
       newPizza.toppings.push($(this).val());
     });
-    console.log(newPizza.createPrice());
+    newPizza.price = newPizza.createPrice();
+    newOrder.pizzas.push(newPizza);
+    console.log(newOrder);
+    resetFields();
+  });
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+
 
   });
 });
